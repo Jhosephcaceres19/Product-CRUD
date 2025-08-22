@@ -1,4 +1,4 @@
-#Endpoints REST disponibles
+# Endpoints REST disponibles
 
 GET /api/productos → Listar productos
 
