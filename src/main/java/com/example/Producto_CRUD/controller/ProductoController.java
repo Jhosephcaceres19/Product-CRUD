@@ -1,5 +1,7 @@
 package com.example.Producto_CRUD.controller;
 
+import java.util.List;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,12 +16,17 @@ import com.example.Producto_CRUD.model.Producto;
 import com.example.Producto_CRUD.service.ProductoService;
 
 @RestController
-@RequestMapping("/api/product")
+@RequestMapping("/api/productos")
 public class ProductoController {
     private final ProductoService productoService;
 
     public ProductoController(ProductoService productoService) {
         this.productoService = productoService;
+    }
+
+    @GetMapping
+    public List<Producto> listar() {
+        return productoService.listarProductos();
     }
 
     @GetMapping("/{id}")
